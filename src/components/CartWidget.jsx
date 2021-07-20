@@ -2,7 +2,7 @@ import { BiCart } from 'react-icons/bi';
 
 function CartWidget() {
     return (
-      <div className="">
+      <div className=''>
        <BiCart/>
       </div>
     );
