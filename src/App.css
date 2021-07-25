@@ -37,3 +37,19 @@
     }
   }
   
+  .card {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    height : 20%;
+  }
+
+  .image{
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    vertical-align: top;
+  }

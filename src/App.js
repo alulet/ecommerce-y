@@ -1,19 +1,19 @@
 import './App.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer'
-import React, { useState } from 'react';
-import ItemCount from './components/ItemCount';
+import React from 'react';
+import ItemDetailContainer from './container/ItemDetailContainer';
+
 
 
 
 function App() {
-    
-  return (
+    return (
     <div className="App">
-     <NavBar />
-     <ItemListContainer />
-     </div>
-  );
+    <NavBar />
+    
+    <ItemDetailContainer />
+    </div>
+    );
 }
 
 export default App;
