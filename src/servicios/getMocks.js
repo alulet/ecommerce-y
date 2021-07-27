@@ -1,8 +1,8 @@
 const item = [
 
-    {id:'assad', nombre: 'Remera XL', precio : 4600 , image: '../assets/img/remera.png' },
-    {id:'lele', nombre: 'Pantalones Chupines', precio: 3800, image: '../assets/img/pantalon.png'},
-    {id:'asdqwr', nombre: 'Zapatillas Deportivas', precio: 5500, image: '../assets/img/zapas.png' },
+    {id:'assad', nombre: 'Remera XL', precio : 4600 , image: '../assets/img/remera.png' , desc : '100% Algodon'  },
+    {id:'lele', nombre: 'Pantalon Chupin', precio: 3800, image: '../assets/img/pantalon.png', desc: 'Jean Chupin Lavado bleach '},
+    {id:'asdqwr', nombre: 'Zapatilla Deportiva', precio: 5500, image: '../assets/img/zapas.png', desc: 'Gamecourt' },
 
 ]
 

@@ -23,7 +23,7 @@ function ItemDetailContainer() {
         
     return (
 
-        <div class="Catalogo">
+        <div className="Catalogo">
         <ItemList items={item} />
         </div>
 

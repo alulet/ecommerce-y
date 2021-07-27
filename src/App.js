@@ -15,7 +15,7 @@ function App() {
         <NavBar />
         <div className="App">
         <Switch>
-        <Route path="/item/">
+        <Route path="/item/:id">
         <ItemDetailContainer />
         </Route>
         </Switch>
