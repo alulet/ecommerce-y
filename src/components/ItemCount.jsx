@@ -28,7 +28,7 @@ import React, {useState} from 'react'
             <button onClick={handleRemove}> - </button>
             <label className={'alert alert-white'}> {cantidad} </label>
             <button onClick={handleAdd}> + </button>
-            <button className={'btn btn-primary btn-block'} onClick={()=>onAdd(cantidad)}> Add to Cart </button>
+            <button className={'btn btn-success btn-xs btn-block'} onClick={()=>onAdd(cantidad)}> Add to Cart </button>
           </div>
           </div>
             )

@@ -11,10 +11,12 @@ const ItemDetail = (props) => {
     return(
 
         <div className='card'>
+            {/* <p>{props.id}</p> */}
             <img className='image' src={props.image} alt='..'/>
             <h5 class="card-title">{props.nombre}  </h5>  
             <p class="card-text"> $ {props.precio}</p>
             <ItemCount stock={5} initial={1} onAdd={handleCount} />
+            
         </div>
 
 

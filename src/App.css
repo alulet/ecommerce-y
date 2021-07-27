@@ -1,11 +1,13 @@
 .App {
     text-align: center;
+    height:100vh;
+  
   }
   
   .App-logo {
     height: 40vmin;
     pointer-events: none;
-  }
+    }
   
   @media (prefers-reduced-motion: no-preference) {
     .App-logo {
@@ -14,7 +16,7 @@
   }
   
   .App-header {
-    background-color: #282c34;
+    background-color: red;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -37,19 +39,4 @@
     }
   }
   
-  .card {
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    height : 20%;
-  }
-
-  .image{
-    padding: 20px;
-    width: 200px;
-    height: 200px;
-    vertical-align: top;
-  }
+  
