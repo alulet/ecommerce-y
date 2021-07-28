@@ -6,20 +6,24 @@ import {useParams} from 'react-router-dom'
 
 function ItemDetailContainer() {
     const [item, setItem] = useState([])
-    const { itemId } = useParams()
+    const { id } = useParams()
+    console.log({ id })
 
     useEffect(() => {
-        if(itemId===undefined){
+        if(id===undefined){
             getMocks()
             .then(resp => setItem(resp))
             }
         else{
             getMocks()
-            .then(resp => setItem(resp.filter(items => items===itemId)))
+            .then(resp => {
+                console.log( { resp } )
+                setItem(resp.filter(item => item.id===id))
+        })
         }
-        },[itemId])
+        },[id])
 
-        console.log(itemId);
+        console.log(id);
         
     return (
 

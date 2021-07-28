@@ -18,6 +18,9 @@ function App() {
         <Route path="/item/:id">
         <ItemDetailContainer />
         </Route>
+        <Route path="/">
+        <ItemDetailContainer />
+        </Route>
         </Switch>
         </div>
         
