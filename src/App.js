@@ -15,7 +15,7 @@ function App() {
         <NavBar />
         <div className="App">
         <Switch>
-        <Route path="/item/:id">
+        <Route path="/item/:categoria">
         <ItemDetailContainer />
         </Route>
         <Route path="/">

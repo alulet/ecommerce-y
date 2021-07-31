@@ -19,9 +19,9 @@ function NavBar() {
           Indumentaria
         </Link>
         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <Link className="dropdown-item" to="/item/1">Remeras</Link>
-          <Link className="dropdown-item" to="/item/2">Pantalon</Link>
-          <Link className="dropdown-item" to="/item/3">Zapatillas</Link>
+          <Link className="dropdown-item" to="/item/Remeras">Remeras</Link>
+          <Link className="dropdown-item" to="/item/Pantalon">Pantalon</Link>
+          <Link className="dropdown-item" to="/item/Zapatillas">Zapatillas</Link>
         </div>
       </li>
     </ul>

@@ -2,9 +2,6 @@ import React from 'react';
 import ItemDetail from '../components/ItemDetail';
 
 
-
-
-
 function ItemList({items}) {
     return (
         <div>

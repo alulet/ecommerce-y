@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { getMocks } from '../servicios/getMocks'
+import { getMocks } from './ItemListContainer'
 import ItemList from '../components/ItemList'
 import {useParams} from 'react-router-dom'
 
 
 function ItemDetailContainer() {
     const [item, setItem] = useState([])
-    const { id } = useParams()
-    console.log({ id })
+    const { categoria } = useParams()
+    console.log({ categoria })
 
     useEffect(() => {
-        if(id===undefined){
+        if(categoria===undefined){
             getMocks()
             .then(resp => setItem(resp))
             }
@@ -18,12 +18,12 @@ function ItemDetailContainer() {
             getMocks()
             .then(resp => {
                 console.log( { resp } )
-                setItem(resp.filter(item => item.id===id))
+                setItem(resp.filter(item => item.categoria===categoria))
         })
         }
-        },[id])
+        },[categoria])
 
-        console.log(id);
+        console.log(categoria);
         
     return (
 
