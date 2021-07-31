@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
-// import Item from './Item';
 
-  function ItemCount({initial,stock, onAdd}) {
+  function ItemCount({initial,stock,itemId,  onAdd}) {
       const [cantidad, setCantidad] = useState(initial);
       const handleAdd=()=>{
             if (cantidad<stock){
@@ -16,8 +15,7 @@ import React, {useState} from 'react'
 
           }
 
-          
-        }
+            }
   
     
       return (
@@ -28,9 +26,9 @@ import React, {useState} from 'react'
             <button onClick={handleRemove}> - </button>
             <label className={'alert alert-white'}> {cantidad} </label>
             <button onClick={handleAdd}> + </button>
-            <button className={'btn btn-success btn-xs btn-block'} onClick={()=>onAdd(cantidad)}> Add to Cart </button>
-          </div>
-          </div>
+            <button className={'btn btn-success btn-xs btn-block'} onClick={()=>onAdd(itemId, cantidad)}> Add to Cart </button>
+            </div>
+            </div>
             )
   };
 

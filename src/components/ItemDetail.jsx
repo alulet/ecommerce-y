@@ -2,20 +2,17 @@ import React from 'react'
 import ItemCount from './ItemCount'
 
 
-const ItemDetail = (props) => {
-    const handleCount=(cant)=>{
-        alert(`ud ha agregado : ${cant}`)
+    const ItemDetail = ({image,nombre,desc,precio,id, onAdd}) => {
     
-    }
     
     return(
 
         <div className='card'>
-            <img className='image' src={props.image} alt='..'/>
-            <h5 className="card-title">{props.nombre}  </h5>  
-            <p className="card-title"> {props.desc}</p>
-            <p className="card-text"> $ {props.precio}</p>
-            <ItemCount stock={5} initial={1} onAdd={handleCount} />
+            <img className='image' src={image} alt='..'/>
+            <h5 className="card-title">{nombre}  </h5>  
+            <p className="card-title"> {desc}</p>
+            <p className="card-text"> $ {precio}</p>
+            <ItemCount itemId={id} stock={5} initial={1} onAdd={onAdd} />
             
         </div>
 
