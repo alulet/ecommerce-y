@@ -18,7 +18,7 @@ const ItemList=({items}) => {
 
     return (
         <div>
-        {basket.length>0 && <Link to="/cart"> Finalizar Compra </Link> }
+        {basket.length>0 && <Link className='btn btn-success'to="/cart"> Finalizar Compra </Link> }
         {items.map(i => <ItemDetail key={i.id} nombre={i.nombre} precio={i.precio} image={i.image} id={i.id} desc={i.desc} onAdd={handleAddToBasket} /> )}
         </div>
     
