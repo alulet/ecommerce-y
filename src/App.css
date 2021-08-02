@@ -38,4 +38,16 @@
       transform: rotate(360deg);
     }
   }
+
+
+.boton {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+    
+}
   
