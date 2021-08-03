@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
     return(
         
             <div className='card'>
-            <Link to={`/item/${id}`}> 
+            <Link to={`/detalle/${id}`}> 
             <img className='image' src={image} alt='..'/>
             <p className="card-title"> {nombre}  </p>  
             <p className="card-title"> {desc}</p>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { getMocks } from '../container/ItemListContainer'
 import {useParams} from 'react-router-dom'
-// import ItemList from './ItemList'
+import ItemList from './ItemList'
 // import ItemDetail from './ItemDetail'
-import ItemCount from './ItemCount'
+// import ItemCount from './ItemCount'
 
 
     const ItemDetail1=({image,nombre,desc,precio, onAdd}) => {
@@ -28,13 +28,8 @@ import ItemCount from './ItemCount'
         console.log(id);
 
         return(
-        
-            <div className='card'>
-            <img className='image' src={item.image} alt='..'/>
-            <p className="card-title"> {item.nombre}  </p>  
-            <p className="card-title"> {item.desc}</p>
-            <p className="card-text"> $ {item.precio}</p>
-            <ItemCount itemId={id} stock={5} initial={1} onAdd={onAdd} />
+            <div>
+                <ItemList items={item}/>
             </div>
             
         
