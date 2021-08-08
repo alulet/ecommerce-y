@@ -1,17 +1,30 @@
-// import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useState } from 'react';
 
-// const CartContext = createContext()
+export const CartContext = createContext()
 
-// const useCartContext = () => useContext(CartContext);
+export default function UseCartContext({children}){
+    const [cart, setCart] = useState([],
+    function  guardarItem(newItem) {
+        // const idx = setCart.findIndex(item => newItem.item.id === item.item.id)
+        // if(idx=== -1 ){
+        //                 setCart([...cart, newItem])
+        // }else{
+        //                 const newQuantity = cart[idx].quantity + newItem.quantity
+        //                 const oldList = setCart.filter(old => old.item.id !== newItem.item.id)
+        //                 setCart([...oldList, {newItem.item, newQuantity}])
 
-// const CartContextProvider = ({children}) => {
-// const [cart, setCart] = useState('Cart');
-    
+        // }
+        
 
-//     return(
-//         <CartContextProvider></CartContextProvider>
-//     )
-//     }
+    })
 
-// export default CartContext
+    return(
+        <CartContext.Provider value={{
+            cart,
+            // guardarItem,
+        }}>
+            {children}
+        </CartContext.Provider>
+    )
 
+};

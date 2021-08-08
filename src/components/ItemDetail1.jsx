@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { getMocks } from '../container/ItemListContainer'
 import {useParams} from 'react-router-dom'
 import ItemList from './ItemList'
-// import ItemDetail from './ItemDetail'
-// import ItemCount from './ItemCount'
+
 
 
     const ItemDetail1=({image,nombre,desc,precio, onAdd}) => {
+        
     const [item, setItem] = useState([])
     const { id } = useParams()
+
+
     console.log({ id })
 
     useEffect(() => {
