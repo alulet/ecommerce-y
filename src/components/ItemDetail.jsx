@@ -1,9 +1,19 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
-    const ItemDetail = ({image,nombre,desc,precio,id, onAdd}) => {
+    const ItemDetail = ({image,nombre,desc,precio,id}) => {
     
+        const [cantidad, setCantidad] = useState(0)
+        const [pulsar, setPulsar] = useState(false)
+
+        function onAdd(count){
+            setCantidad(count)
+            setPulsar(true)
+        }
+        console.log(cantidad)
+        console.log(pulsar)
     
     return(
         

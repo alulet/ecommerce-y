@@ -5,12 +5,14 @@ import React from 'react';
 import ItemDetailContainer from './container/ItemDetailContainer';
 import Cart from './components/context/Cart';
 import ItemDetail from './components/ItemDetail1'
+// import {CartContextProvider} from './components/context/CartContext';
 
 
 function App() {
 
     return (
-    <Router>
+        
+        <Router>
         <NavBar />
         <div className="App">
         <Switch>
@@ -22,7 +24,7 @@ function App() {
         </div>
         </Router>
         
-    );
-}
+    );}
 
-export default App;
+
+export default App
