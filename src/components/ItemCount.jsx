@@ -20,6 +20,7 @@ import { Link } from 'react-router-dom';
       const handleOnAdd=()=>{
             onAdd(cantidad)
             setPulsado(true)
+            
       }
 
             
