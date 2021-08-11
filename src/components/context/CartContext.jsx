@@ -16,10 +16,10 @@ export default function UseCartContext({children}){
         console.log({cantidad})
         const idx = cart.findIndex(item => newItem.id === item.id)
         if(idx === -1 ){
-                        setCart([...cart, newItem])
+                        setCart([...cart, newItem, cantidad])
         }else{
-                        // const sasa = newItem
-                        // sasa.quantity = cart[idx].quantity ? cart[idx].quantity + cantidad : cantidad
+                        const sasa = newItem
+                        sasa.quantity = cart[idx].quantity ? cart[idx].quantity + cantidad : cantidad
                         const oldList = cart.filter(old => old.id !== newItem.id)
                         setCart([...oldList, {item: sasa}])
 

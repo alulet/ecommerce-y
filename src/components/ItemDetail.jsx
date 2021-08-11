@@ -11,6 +11,7 @@ import { CartContext} from '../components/context/CartContext'
         const [cantidad, setCantidad] = useState(0)
         const {guardarItem} = useContext(CartContext)
         
+        console.log(cantidad)
         const onAdd = (count) => {
             setCantidad(count)
             guardarItem(item,count)
