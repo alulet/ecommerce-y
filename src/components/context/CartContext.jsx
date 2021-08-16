@@ -9,20 +9,19 @@ export default function UseCartContext({children}){
         if (idx !== -1 ){ 
             const newCart = cart.filter(e => itemToDelete.id !== e.id)
             setCart(newCart)
-    
+
         }
     }
     const  guardarItem = (newItem, cantidad) => {
-        console.log({cantidad})
         const idx = cart.findIndex(item => newItem.id === item.id)
         if(idx === -1 ){
-                        setCart([...cart, newItem, cantidad])
+                        setCart([...cart, newItem])
+                        console.log({newItem, cantidad})
         }else{
-                        const sasa = newItem
+                        const sasa = newItem;
                         sasa.quantity = cart[idx].quantity ? cart[idx].quantity + cantidad : cantidad
                         const oldList = cart.filter(old => old.id !== newItem.id)
                         setCart([...oldList, {item: sasa}])
-
         }
         
 

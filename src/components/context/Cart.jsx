@@ -10,11 +10,11 @@ return(
         <>
             {cart.map(item=> (
                 
-                <div className='row' key={Math.random()}>
+                <div className='row' key={item.id}>
                     <p className='col'> <button onClick={()=> borrarItem(item)}> Eliminar </button> </p>
-                    <p className='col'>{item.nombre}</p>
-                    <p className='col'>{item.quantity}</p> 
-                    <p className='col'>{item.precio}</p>
+                    <p className='col'> {item.desc}</p>
+                    <p className='col'> {item.quantity}</p>  
+                    <p className='col'> ${item.precio}</p>
                 </div>
 
 
