@@ -4,6 +4,7 @@ export const CartContext = createContext()
 
 export default function UseCartContext({children}){
     const [cart, setCart] = useState([])
+    
     const borrarItem = (itemToDelete) => {
         const idx = cart.findIndex(item => itemToDelete.id === item.id)
         if (idx !== -1 ){ 
@@ -11,17 +12,18 @@ export default function UseCartContext({children}){
             setCart(newCart)
 
         }
-    }
-    const  guardarItem = (newItem, cantidad) => {
-        const idx = cart.findIndex(item => newItem.id === item.id)
+    }   
+        const  guardarItem = (newItem, cantidad) => {
+        const idx = cart.findIndex(item => newItem.id !== item.id)
+        console.log(idx)
         if(idx === -1 ){
                         setCart([...cart, newItem])
-                        console.log({newItem, cantidad})
-        }else{
-                        const sasa = newItem;
-                        sasa.quantity = cart[idx].quantity ? cart[idx].quantity + cantidad : cantidad
+                        console.log({newItem,cantidad})
+                        }else{
                         const oldList = cart.filter(old => old.id !== newItem.id)
-                        setCart([...oldList, {item: sasa}])
+                        console.log({oldList,newItem,cantidad})
+                        setCart([...oldList, newItem, cantidad])
+
         }
         
 
@@ -32,7 +34,7 @@ export default function UseCartContext({children}){
             cart,
             guardarItem,
             borrarItem,
-        }}>
+            }}>
             {children}
         </CartContext.Provider>
     )

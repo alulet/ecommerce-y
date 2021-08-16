@@ -12,6 +12,7 @@ import { CartContext} from '../components/context/CartContext'
         const {guardarItem} = useContext(CartContext)
         
         
+        
         const onAdd = (count) => {
             setCantidad(count)
             guardarItem(item,count)
@@ -23,7 +24,7 @@ import { CartContext} from '../components/context/CartContext'
     
     return(
             <CartContext.Consumer> 
-            {({cart, guardarItem })=> (
+            {({cart, guardarItem,})=> (
                 <div className='card'>
                 <Link to={`/detalle/${item.id}`}> 
                 <img className='image' src={item.image} alt='..'/>
