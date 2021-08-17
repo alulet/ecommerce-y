@@ -1,42 +1,53 @@
-import React, { createContext, useState } from 'react';
+import React, {useContext, useReducer, createContext, useState } from "react"
+// import { CartContext } from './CartContext'
 
-export const CartContext = createContext()
+const CartStateContext = createContext();
+const CartDispatchContext = createContext();
 
-export default function UseCartContext({children}){
-    const [cart, setCart] = useState([])
-    
-    const borrarItem = (itemToDelete) => {
-        const idx = cart.findIndex(item => itemToDelete.id === item.id)
-        if (idx !== -1 ){ 
-            const newCart = cart.filter(e => itemToDelete.id !== e.id)
-            setCart(newCart)
-
-        }
-    }   
-        const  guardarItem = (newItem, cantidad) => {
-        const idx = cart.findIndex(item => newItem.id !== item.id)
-        console.log(idx)
-        if(idx === -1 ){
-                        setCart([...cart, newItem])
-                        console.log({newItem,cantidad})
-                        }else{
-                        const oldList = cart.filter(old => old.id !== newItem.id)
-                        console.log({oldList,newItem,cantidad})
-                        setCart([...oldList, newItem, cantidad])
-
-        }
-        
-
+const reducer = (state, action) => {
+    switch(action.type) {
+      case "ADD":
+        return guardarItem(state, action.item)
+        case "REMOVE":
+            const newArray = [...state];
+            newArray.splice(action.index, 1);
+            return newArray;
+        default:
+            throw new Error(`unknown action ${action.type}`);
     }
+}
 
-    return(
-        <CartContext.Provider value={{
-            cart,
-            guardarItem,
-            borrarItem,
-            }}>
-            {children}
-        </CartContext.Provider>
+export const CartProvider = ({ children }) => {
+    const [state, dispatch] = useReducer(reducer, []);
+
+    return (
+        <CartDispatchContext.Provider value={dispatch}>
+            <CartStateContext.Provider value={state}>
+                { children }
+            </CartStateContext.Provider>
+        </CartDispatchContext.Provider>
     )
+}
 
-};
+export const useCart = () => useContext(CartStateContext);
+export const useDispatchCart = () => useContext(CartDispatchContext);
+
+const guardarItem = (items, newItem) => {
+    console.log({ items, newItem })
+      const idx = items.findIndex(item => newItem.id === item.id)
+      let newItems;
+      console.log({ idx })
+      if(idx === -1 ){
+          newItems = [...items, newItem]
+      } else {
+          const oldList = items.filter(old => old.id !== newItem.id)
+          console.log({ oldList })
+          const oldItem = items.filter(old => old.id === newItem.id)[0]
+          console.log({ oldItem })
+          const itemAddedCount = oldItem.count + newItem.count;
+          console.log({ itemAddedCount })
+          newItem.count = itemAddedCount;
+          newItems = [...oldList, newItem]
+      }
+      return newItems
+  }

@@ -7,7 +7,6 @@ import {useParams} from 'react-router-dom'
 const ItemDetailContainer=() => {
     const [item, setItem] = useState([])
     const { categoria } = useParams()
-    console.log({ categoria })
 
     useEffect(() => {
         if(categoria===undefined){
@@ -28,8 +27,7 @@ const ItemDetailContainer=() => {
     return (
 
         <div className="Catalogo">
-        <ItemList items={item} />
-        
+            <ItemList items={item} />
         </div>
 
     )

@@ -11,8 +11,7 @@ const ItemDetail = (item) => {
 
     const onAdd = (count) => {
         setCantidad(count)
-        const newItem = {...item, count}
-        dispatch({ type: "ADD", item: newItem })
+        dispatch({type: "ADD", item })
     }
 
     return(
@@ -25,8 +24,7 @@ const ItemDetail = (item) => {
             </Link>
             <ItemCount itemId={item.id} stock={5} initial={1} onAdd={onAdd} />
         </div>
-    )
-}
+    )}
 
 
 export default ItemDetail

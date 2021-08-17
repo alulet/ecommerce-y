@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { CartProvider } from './components/context/CartContext'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-    <App />,
+    <CartProvider>
+      <App />
+    </CartProvider>,
     document.getElementById('root')
 );
 

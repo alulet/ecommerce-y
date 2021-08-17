@@ -1,15 +1,13 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 
-  function ItemCount({initial,stock,itemId,onAdd}) {
+  function ItemCount({initial,stock,onAdd}) {
       const [cantidad, setCantidad] = useState(initial);
       const [pulsado, setPulsado] = useState(false)
       const handleAdd=()=>{
             if (cantidad<stock){
               setCantidad(cantidad+1)
-
             }
-
         }
       const handleRemove=()=>{
             if (cantidad>initial){
