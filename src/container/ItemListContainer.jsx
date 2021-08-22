@@ -51,9 +51,8 @@ const item = [
 	},
 ];
 
-const dbQuery = getFirestore();
-		dbQuery
-			.collection("Items")
-			.where('id', '==' , '1').get()
-			.then(resp => item(resp.docs.map(ite => ({...ite.data(), id: ite.id }))));
-	
+// const dbQuery = getFirestore();
+// 		dbQuery
+// 			.collection("Items")
+// 			.where ('id', '==' , '1').get()
+// 			.then(resp => item(resp.docs.map(ite => ({...ite.data(), id: ite.id }))));

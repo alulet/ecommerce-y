@@ -1,7 +1,7 @@
 import React from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useState } from "react";
 
 import { useDispatchCart } from "../components/context/CartContext";
 
