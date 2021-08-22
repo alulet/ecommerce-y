@@ -13,7 +13,7 @@ const ItemDetail = (item) => {
 		setCantidad(count);
 		dispatch({ type: "ADD", item });
 	};
-
+	
 	return (
 		<div className='card'>
 			<Link to={`/detalle/${item.id}`}>
