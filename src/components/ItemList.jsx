@@ -1,12 +1,12 @@
 import React from "react";
-import ItemDetail from "../components/ItemDetail";
+import ItemCard from "../components/ItemCard";
 
 const ItemList = ({ items }) => {
 	return (
 		<div>
 			{items &&
 				items.map((i) => (
-					<ItemDetail
+					<ItemCard
 						key={i.id}
 						nombre={i.nombre}
 						precio={i.precio}
