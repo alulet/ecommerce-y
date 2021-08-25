@@ -1,24 +1,17 @@
-import React from "react";
+import { React } from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
-import { useState, useContext, useEffect } from "react";
-import { getFirestore } from "../container/firebaseService";
-
+import { useState } from "react";
 import { useDispatchCart } from "../components/context/CartContext";
 
 const ItemDetail = (item) => {
 	const [cantidad, setCantidad] = useState(0);
 	const dispatch = useDispatchCart();
-	console.log(item)
-	
-
-	///// ACA IRIA EL FIREBASE DEL ITEM POR ID // 
-	
 	const onAdd = (count) => {
 		setCantidad(count);
 		dispatch({ type: "ADD", item });
 	};
-	
+
 	return (
 		<div className='card'>
 			<Link to={`/detalle/${item.id}`}>

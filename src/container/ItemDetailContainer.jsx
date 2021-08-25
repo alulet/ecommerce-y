@@ -9,22 +9,31 @@ const ItemDetailContainer = () => {
 	const { categoria } = useParams();
 
 	useEffect(() => {
-		if(categoria===undefined){
-		const dbQuery = getFirestore()
-		dbQuery.collection("Items").get()
-		.then(resp => setItem(resp.docs.map(ite => ({ ...ite.data(), id: ite.id }))))
-		.catch((err) => {
-			console.log(err);
-		})}
-		else {
-		const dbQuery = getFirestore();
-		dbQuery.collection("Items").where('categoria' , '==' , categoria).get()
-		.then(resp => setItem(resp.docs.map(ite => ({ ...ite.data(), id: ite.id }))))
-		.catch((err) => { 
-			console.log(err);
-		})}},[categoria]);
-
-	console.log(item);
+		if (categoria === undefined) {
+			const dbQuery = getFirestore();
+			dbQuery
+				.collection("Items")
+				.get()
+				.then((resp) =>
+					setItem(resp.docs.map((ite) => ({ ...ite.data(), id: ite.id })))
+				)
+				.catch((err) => {
+					console.log(err);
+				});
+		} else {
+			const dbQuery = getFirestore();
+			dbQuery
+				.collection("Items")
+				.where("categoria", "==", categoria)
+				.get()
+				.then((resp) =>
+					setItem(resp.docs.map((ite) => ({ ...ite.data(), id: ite.id })))
+				)
+				.catch((err) => {
+					console.log(err);
+				});
+		}
+	}, [categoria]);
 
 	return (
 		<div className='Catalogo'>

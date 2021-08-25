@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import React from "react";
 import ItemDetailContainer from "./container/ItemDetailContainer";
 import Cart from "./components/context/Cart";
+import ItemCard from "./components/ItemList";
 
 function App() {
 	return (
@@ -12,8 +13,10 @@ function App() {
 			<div className='App'>
 				<Switch>
 					<Route exact path='/item/:categoria'>
-						{" "}
 						<ItemDetailContainer />
+					</Route>
+					<Route exact path='/detalle/:id'>
+						<ItemCard />
 					</Route>
 					<Route exact path='/'>
 						<ItemDetailContainer />
